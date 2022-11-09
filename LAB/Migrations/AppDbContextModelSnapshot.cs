@@ -42,23 +42,7 @@ namespace TaskManagaer.Migrations
 
                     b.ToTable("Tasks");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 15,
-                            Author = "BB",
-                            Description = "gsgkdgk",
-                            Email = "1234@gmail.com",
-                            TaskName = "AA"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Author = "dd",
-                            Description = "gsgkdksgksggk",
-                            Email = "567568@gmail.com",
-                            TaskName = "BB"
-                        });
+                   
                 });
 #pragma warning restore 612, 618
         }

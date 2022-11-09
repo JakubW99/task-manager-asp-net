@@ -4,23 +4,8 @@
 *@
 @{
 }
-
-<form asp-action="Form" method="post">
+<form asp-action="Edit" method="post">
  <div asp-validation-summary="All"></div>
- <div>
- <label asp-for="Author">Your name</label>
- <div class="form-group">
- <span asp-validation-for="Author" class="text-danger"></span>
- </div>
- <input class="form-control" type="text" asp-for="Author"/>
- </div>
- <div>
- <label asp-for="Email">Email</label>
- <div class="form-group">
- <span asp-validation-for="Email" class="text-danger"></span>
- </div>
- <input class="form-control" type="text" asp-for="Email"/>
- </div>
  <div>
  <label asp-for="TaskName">Task name</label>
  <div class="form-group">

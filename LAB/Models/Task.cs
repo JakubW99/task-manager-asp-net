@@ -17,5 +17,7 @@ namespace LAB.Models
         [MinLength(length: 5,ErrorMessage ="Opis musi mieć conajmniej 5 znaków")]
         public string Description { get; set; }
 
+
     }
+
 }
