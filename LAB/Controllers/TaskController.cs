@@ -30,8 +30,7 @@ namespace LAB.Controllers
         }
         public IActionResult Delete(int id)
         {
-
-            context.Tasks.Remove(context.Tasks.Find(5));
+            context.Tasks.Remove(context.Tasks.Find(id));
             counter--;
             return View("Index", tasks);
         }

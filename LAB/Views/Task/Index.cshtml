@@ -5,8 +5,19 @@
 @{
 }
 <table class="table">
-    <a class ="btn btn-succes"  asp-controller="Task" asp-action="Form">Dodaj</a>
-   @foreach(var task in Model)
+    <a class ="btn btn-primary"  asp-controller="Task" asp-action="Form">Dodaj</a>
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Author</th>
+      <th scope="col">Task Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var task in Model)
         {
     <tr>
             <td>Id: @task.Id</td>
@@ -18,7 +29,9 @@
             <td><a class ="btn btn-danger"  asp-controller="Task" asp-action="Delete"
             asp-route-id=@task.Id>Delete</a> </td>
     </tr>
+     
         }
+     </tbody>
 </table>
 
 
