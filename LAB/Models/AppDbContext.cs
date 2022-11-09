@@ -18,8 +18,8 @@ namespace TaskManagaer.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<LAB.Models.Task>().HasData(
-           new LAB.Models.Task() { Id = 1, TaskName = "AA", Email = "1234@gmail.com", Description = "gsgkdgk", Author = "BB" },
-           new LAB.Models.Task() { Id = 1, TaskName = "BB", Email = "567568@gmail.com", Description = "gsgkdksgksggk", Author = "dd" }
+           new LAB.Models.Task() { Id = 15, TaskName = "AA", Email = "1234@gmail.com", Description = "gsgkdgk", Author = "BB" },
+           new LAB.Models.Task() { Id = 16, TaskName = "BB", Email = "567568@gmail.com", Description = "gsgkdksgksggk", Author = "dd" }
             );
         }
     }
