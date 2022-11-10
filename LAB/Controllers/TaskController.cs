@@ -4,56 +4,49 @@ using TaskManagaer.Models;
 using System.Net;
 using System.Data;
 using System.Linq;
+using Task = LAB.Models.Task;
 
 namespace LAB.Controllers
 {
     public class TaskController : Controller
     {
-        private static List<Models.Task> tasks = new List<Models.Task>();
-        
+
+
         private static AppDbContext context = new AppDbContext();
-        int counter = tasks.Count;
+
         public IActionResult Index()
         {
-            using (var context = new AppDbContext())
-            {
 
-                // Return the list of data from the database
-                tasks  = context.Tasks.ToList();
-             
-                return View(tasks);
-            }
-          
+
+
+            // Return the list of data from the database
+            var data = context.Tasks.ToList();
+
+            return View(data);
+
+
         }
-        public ActionResult Delete()
-        {
-            return View("Index");
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken] 
+        [HttpGet]
         public ActionResult Delete(int id)
         {
-            using (var context = new AppDbContext())
+            var data = context.Tasks.Where(x => x.Id == id).FirstOrDefault();
+            if (data != null)
             {
-                var data = context.Tasks.FirstOrDefault(x => x.Id == id);
-                if (data != null)
-                {
-                    context.Tasks.Remove(data);
-                    tasks.Remove(data);
-                    context.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-                else
-                    return View("Index");
+                context.Tasks.Remove(data);
+                context.SaveChanges();
+                return RedirectToAction("Index");
             }
+            else return View("Index");
+
         }
+        [HttpGet]
+
         public ActionResult Edit(int Id)
         {
-            using (var context = new AppDbContext())
-            {
-                var data = context.Tasks.Where(x => x.Id == Id).SingleOrDefault();
-                return View(data);
-            }
+
+            var data = context.Tasks.Where(x => x.Id == Id).FirstOrDefault();
+            return View(data);
+
         }
 
         // To specify that this will be
@@ -62,30 +55,30 @@ namespace LAB.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int Id, Models.Task model)
         {
-            using (var context = new AppDbContext())
+
+
+            // Use of lambda expression to access
+            // particular record from a database
+            var data = context.Tasks.Where(x => x.Id == Id).FirstOrDefault();
+
+            // Checking if any such record exist
+            if (data != null)
             {
+                data.Author = data.Author;
+                data.Email = data.Email;
+              
+                data.TaskName = model.TaskName;
+                data.Description = model.Description;
 
-                // Use of lambda expression to access
-                // particular record from a database
-                var data = context.Tasks.FirstOrDefault(x => x.Id == Id);
+                context.SaveChanges();
 
-                // Checking if any such record exist
-                if (data != null)
-                {
-                    data.Author= data.Author;
-                    data.Email =data.Email;
-                    data.TaskName = model.TaskName;
-                    data.Description = model.Description;
-
-                    context.SaveChanges();
-                   
-                    // It will redirect to
-                    // the Read method
-                    return RedirectToAction("Index");
-                }
-                else
-                    return View();
+                // It will redirect to
+                // the Read method
+                return RedirectToAction("Index");
             }
+            else
+                return View();
+
         }
 
 
@@ -100,12 +93,12 @@ namespace LAB.Controllers
             {
                 context.Tasks.Add(task);
                 context.SaveChanges();
-                tasks.Add(task);
-                return View("Index",tasks);
-               
+
+                return View("Index", context.Tasks.ToList());
+
             }
             else
-            return View();
+                return View();
         }
     }
 }
