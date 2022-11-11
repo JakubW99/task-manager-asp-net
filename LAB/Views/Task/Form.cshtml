@@ -4,38 +4,38 @@
 *@
 @{
 }
-  <h1>Add task</h1>
+<h1>Add task</h1>
 <form asp-action="Form" method="post">
- <div asp-validation-summary="All"></div>
- <div>
- <label asp-for="Author">Your name</label>
- <div class="form-group">
- <span asp-validation-for="Author" class="text-danger"></span>
- </div>
- <input class="form-control" type="text" asp-for="Author"/>
- </div>
- <div>
- <label asp-for="Email">Email</label>
- <div class="form-group">
- <span asp-validation-for="Email" class="text-danger"></span>
- </div>
- <input class="form-control" type="text" asp-for="Email"/>
- </div>
- <div>
- <label asp-for="TaskName">Task name</label>
- <div class="form-group">
- <span asp-validation-for="TaskName" class="text-danger"></span>
- </div>
- <input class="form-control" type="text" asp-for="TaskName"/>
- </div>
- <div>
- <label asp-for="Description">Task description</label>
- <div class="form-group">
- <span asp-validation-for="Description" class="text-danger"></span>
- </div>
- <input class="form-control" type="text" asp-for="Description"/>
- </div>
- <button class="btn btn-outline-primary button" type="submit" value="Submit">Submit</button>
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Author">Your name</label>
+        <div class="form-group">
+            <span asp-validation-for="Author" class="text-danger"></span>
+        </div>
+        <input class="form-control" type="text" asp-for="Author" />
+    </div>
+    <div>
+        <label asp-for="Email">Email</label>
+        <div class="form-group">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <input class="form-control" type="text" asp-for="Email" />
+    </div>
+    <div>
+        <label asp-for="TaskName">Task name</label>
+        <div class="form-group">
+            <span asp-validation-for="TaskName" class="text-danger"></span>
+        </div>
+        <input class="form-control" type="text" asp-for="TaskName" />
+    </div>
+    <div>
+        <label asp-for="Description">Task description</label>
+        <div class="form-group">
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <input class="form-control" type="text" asp-for="Description" />
+    </div>
+    <button class="btn btn-outline-primary button" type="submit" value="Submit">Submit</button>
 
 
 

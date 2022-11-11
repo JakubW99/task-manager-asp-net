@@ -4,24 +4,24 @@
 *@
 @{
 }
-  <h1>Edit task</h1>
+<h1>Edit task</h1>
 <form asp-action="Edit" method="post">
- <div asp-validation-summary="All"></div>
- <div>
- <label asp-for="TaskName">Task name</label>
- <div class="form-group">
- <span asp-validation-for="TaskName" class="text-danger"></span>
- </div>
- <input class="form-control" type="text" asp-for="TaskName"/>
- </div>
- <div>
- <label asp-for="Description">Task description</label>
- <div class="form-group">
- <span asp-validation-for="Description" class="text-danger"></span>
- </div>
- <input class="form-control" type="text" asp-for="Description"/>
- </div>
- <button class="btn btn-outline-primary button" type="submit" value="Submit">Submit</button>
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="TaskName">Task name</label>
+        <div class="form-group">
+            <span asp-validation-for="TaskName" class="text-danger"></span>
+        </div>
+        <input class="form-control" type="text" asp-for="TaskName" />
+    </div>
+    <div>
+        <label asp-for="Description">Task description</label>
+        <div class="form-group">
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <input class="form-control" type="text" asp-for="Description" />
+    </div>
+    <button class="btn btn-outline-primary button" type="submit" value="Submit">Submit</button>
 
 
 

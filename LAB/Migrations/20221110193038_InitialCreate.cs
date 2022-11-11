@@ -2,8 +2,6 @@
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
 namespace TaskManagaer.Migrations
 {
     /// <inheritdoc />
@@ -26,15 +24,6 @@ namespace TaskManagaer.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tasks", x => x.Id);
-                });
-
-            migrationBuilder.InsertData(
-                table: "Tasks",
-                columns: new[] { "Id", "Author", "Description", "Email", "TaskName" },
-                values: new object[,]
-                {
-                    { 15, "BB", "gsgkdgk", "1234@gmail.com", "AA" },
-                    { 16, "dd", "gsgkdksgksggk", "567568@gmail.com", "BB" }
                 });
         }
 

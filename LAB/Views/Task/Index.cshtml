@@ -8,34 +8,38 @@
 <table class="table center">
 
     <thead class="thead-dark">
-    <tr>
-      <th class="bg bg-dark text-white" scope="col">#</th>
-      <th class="bg bg-dark text-white" scope="col">Author</th>
-      <th class="bg bg-dark text-white" scope="col">Email</th>
-      <th  class="bg bg-dark text-white"scope="col">Task Name</th>
-      <th class="bg bg-dark text-white" scope="col">Description</th>
-      <th class="bg bg-dark text-white" scope="col">Edit</th>
-      <th class="bg bg-dark text-white" scope="col">Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach(var task in Model)
+        <tr>
+            <th class="bg bg-dark text-white" scope="col">#</th>
+            <th class="bg bg-dark text-white" scope="col">Author</th>
+            <th class="bg bg-dark text-white" scope="col">Email</th>
+            <th class="bg bg-dark text-white" scope="col">Task Name</th>
+            <th class="bg bg-dark text-white" scope="col">Description</th>
+            <th class="bg bg-dark text-white" scope="col">Edit</th>
+            <th class="bg bg-dark text-white" scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model)
         {
-    <tr>
-            <td>Id: @task.Id</td>
-            <td>Autor: @task.Author</td>
-             <td>Email: @task.Email</td>
-            <td>Task: @task.TaskName</td>
-            <td>Description: @task.Description</td>
-            <td><a class ="btn btn-outline-primary"  asp-controller="Task" asp-action="Edit"
-             asp-route-id=@task.Id>Edit</a> </td>
-            <td><a class ="btn btn-outline-danger"  asp-controller="Task" asp-action="Delete"
-            asp-route-id=@task.Id>Delete</a> </td>
-    </tr>
-     
+            <tr>
+                <td>Id: @task.Id</td>
+                <td>Autor: @task.Author</td>
+                <td>Email: @task.Email</td>
+                <td>Task: @task.TaskName</td>
+                <td>Description: @task.Description</td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-controller="Task" asp-action="Edit"
+                   asp-route-id=@task.Id>Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-controller="Task" asp-action="Delete"
+                   asp-route-id=@task.Id>Delete</a>
+                </td>
+            </tr>
+
         }
-     </tbody>
-   
+    </tbody>
+
 </table>
-  <a class ="btn btn-outline-primary button"  asp-controller="Task" asp-action="Form">Add</a>
+<a class="btn btn-outline-primary button" asp-controller="Task" asp-action="Form">Add</a>
 

@@ -87,14 +87,14 @@ namespace LAB.Controllers
             return View();
         }
         [HttpPost]
-        public ViewResult Form(LAB.Models.Task task)
+        public ActionResult Form(LAB.Models.Task task)
         {
             if (ModelState.IsValid)
             {
                 context.Tasks.Add(task);
                 context.SaveChanges();
 
-                return View("Index", context.Tasks.ToList());
+                return RedirectToAction("Index", context.Tasks.ToList());
 
             }
             else
