@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using LAB.Models;
 using TaskManagaer.Models;
-using System.Net;
 using System.Data;
-using System.Linq;
-using Task = LAB.Models.Task;
 
 namespace LAB.Controllers
 {
@@ -15,16 +11,11 @@ namespace LAB.Controllers
         private static AppDbContext context = new AppDbContext();
 
         public IActionResult Index()
-        {
-
-
-
+        { 
             // Return the list of data from the database
             var data = context.Tasks.ToList();
 
             return View(data);
-
-
         }
         [HttpGet]
         public ActionResult Delete(int id)
@@ -66,7 +57,7 @@ namespace LAB.Controllers
             {
                 data.Author = data.Author;
                 data.Email = data.Email;
-              
+
                 data.TaskName = model.TaskName;
                 data.Description = model.Description;
 

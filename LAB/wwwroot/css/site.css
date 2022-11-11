@@ -32,12 +32,16 @@ body {
     margin-top: 100px;
 }
 h1 {
-    color: #7c795d;
+    color: dimgray;
     font-family: 'Trocchi', serif;
     font-size: 45px;
     font-weight: normal;
     line-height: 48px;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 
@@ -49,8 +53,19 @@ h2 {
     line-height: 32px;
     margin-top: 20px;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 .button
 {
     margin-top: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items:center;
 }
