@@ -93,8 +93,8 @@ namespace LAB.Controllers
             {
                 context.Tasks.Add(task);
                 context.SaveChanges();
-
-                return RedirectToAction("Index", context.Tasks.ToList());
+                // return View("Index", context.Tasks.ToList());
+                return RedirectToAction("Index");
 
             }
             else
