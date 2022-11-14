@@ -22,11 +22,11 @@
         @foreach (var task in Model)
         {
             <tr>
-                <td>Id: @task.Id</td>
-                <td>Autor: @task.Author</td>
-                <td>Email: @task.Email</td>
-                <td>Task: @task.TaskName</td>
-                <td>Description: @task.Description</td>
+                <td> @task.Id</td>
+                <td>@task.Author</td>
+                <td> @task.Email</td>
+                <td>@task.TaskName</td>
+                <td>@task.Description</td>
                 <td>
                     <a class="btn btn-outline-primary" asp-controller="Task" asp-action="Edit"
                    asp-route-id=@task.Id>Edit</a>

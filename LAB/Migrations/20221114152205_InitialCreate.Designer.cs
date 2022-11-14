@@ -10,7 +10,7 @@ using TaskManagaer.Models;
 namespace TaskManagaer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221110193038_InitialCreate")]
+    [Migration("20221114152205_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
